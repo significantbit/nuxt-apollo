@@ -16,6 +16,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const clients: { [key: string]: ApolloClient<any> } = {}
 
+  nuxtApp.callHook('apollo:config', { clients: NuxtApollo.clients })
+
   for (const [key, clientConfig] of Object.entries(NuxtApollo.clients)) {
     const getAuth = async () => {
       const token = ref<string | null>()

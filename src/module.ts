@@ -201,5 +201,6 @@ declare module '#app' {
   interface RuntimeNuxtHooks {
     'apollo:auth': (params: { client: string, token: Ref<string | null> }) => void
     'apollo:error': (error: ErrorResponse) => void
+    'apollo:config': (params: { clients: Record<string, ClientConfig> }) => void
   }
 }
